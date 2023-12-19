@@ -1,6 +1,6 @@
 ## Getting Started
 
-We provide a sample app using Express that you can deploy on App Platform. These steps will get this sample application running for you using App Platform.
+We provide a sample app using Typescript that you can deploy on App Platform. These steps will get this sample application running for you using App Platform.
 
 **Note: Following these steps may result in charges for the use of DigitalOcean services.**
 
@@ -12,13 +12,13 @@ We provide a sample app using Express that you can deploy on App Platform. These
 
 Click this button to deploy the app to the DigitalOcean App Platform. If you are not logged in, you will be prompted to log in with your DigitalOcean account.
 
-[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/digitalocean/sample-expressjs/tree/main)
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/digitalocean/sample-typescript/tree/main)
 
 Using this button disables the ability to automatically re-deploy your app when pushing to a branch or tag in your repository as you are using this repo directly.
 
 If you want to automatically re-deploy your app, [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the GitHub repository to your account so that you have a copy of it stored to the cloud. Click the **Fork** button in the GitHub repository and follow the on-screen instructions.
 
-After forking the repo, you should now be viewing this README in your own GitHub org (e.g. `https://github.com/<your-org>/sample-expressjs`). To deploy the new repo, visit https://cloud.digitalocean.com/apps and click **Create App**. Then, click **GitHub**, select the repository you created and select the `main` branch. App Platform will inspect the code, automatically detect the kind of component to create, and use the correct buildpack to create and deploy a container.
+After forking the repo, you should now be viewing this README in your own GitHub org (e.g. `https://github.com/<your-org>/sample-typescript`). To deploy the new repo, visit https://cloud.digitalocean.com/apps and click **Create App**. Then, click **GitHub**, select the repository you created and select the `main` branch. App Platform will inspect the code, automatically detect the kind of component to create, and use the correct buildpack to create and deploy a container.
 
 After clicking the **Deploy to DigitalOcean** button or completing the instructions above to fork the repo, follow these steps:
 
@@ -36,7 +36,7 @@ If you followed the steps to fork the repo and used your own copy when deploying
 
 Here's an example code change you can make for this app:
 
-1. Edit `index.js` and replace "Hello World!" on line 24 with a different greeting
+1. Edit code within the repository
 1. Commit the change to the `main` branch. Normally it's a better practice to create a new branch for your change and then merge that branch to `main` after review, but for this demo you can commit to the `main` branch directly.
 1. Visit https://cloud.digitalocean.com/apps and navigate to your sample app.
 1. You should see a "Building..." progress indicator, just like when you first created the app.

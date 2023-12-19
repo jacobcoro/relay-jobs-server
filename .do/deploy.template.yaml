@@ -1,8 +1,8 @@
 spec:
-  name: sample-expressjs
+  name: sample-typescript
   services:
   - environment_slug: node-js
     git:
       branch: main
-      repo_clone_url: https://github.com/digitalocean/sample-expressjs.git
-    name: sample-expressjs
+      repo_clone_url: https://github.com/digitalocean/sample-typescript.git
+    name: sample-typescript
