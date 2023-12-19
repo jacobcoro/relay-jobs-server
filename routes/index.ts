@@ -3,7 +3,7 @@ import { schedulerRouter } from './scheduler';
 
 let apiRouter = Router();
 
-apiRouter.get('/pong', (req: Request, res: Response) => {
+apiRouter.get('/ping', (req: Request, res: Response) => {
   res.send({ reply: 'pong' });
 });
 

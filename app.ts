@@ -4,7 +4,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 
-import { indexRouter } from './routes/index';
+import { apiRouter } from './routes/index';
 
 var app = express();
 
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/api', indexRouter);
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req: Request, res: Response, next: NextFunction) {
