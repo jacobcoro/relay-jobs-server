@@ -5,7 +5,9 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 
 import { apiRouter } from './routes/index';
+import dotenv from 'dotenv';
 
+dotenv.config();
 var app = express();
 
 app.use(logger('dev'));
