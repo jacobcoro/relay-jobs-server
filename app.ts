@@ -1,3 +1,10 @@
+import dotenv from 'dotenv';
+
+const envLoaded = dotenv.config();
+if (envLoaded.error) {
+  throw envLoaded.error;
+}
+
 import createError, { HttpError } from 'http-errors';
 import express, { Request, Response, NextFunction } from 'express';
 
@@ -5,10 +12,8 @@ import logger from 'morgan';
 // import cookieParser from 'cookie-parser';
 
 import { apiRouter } from './routes/index';
-import dotenv from 'dotenv';
 import cors from 'cors';
 
-dotenv.config();
 var app = express();
 
 app.use(cors());
