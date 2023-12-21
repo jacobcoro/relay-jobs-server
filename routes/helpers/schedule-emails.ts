@@ -131,7 +131,7 @@ const mapScheduledEmailsToCountPerDay = (
 };
 
 export const scheduleEmails = (
-  steps: SequenceStep[],
+  sequenceSteps: SequenceStep[],
   scheduledEmails: Pick<SequenceEmail, 'email_send_at' | 'sequence_step_id'>[],
   influencer: SequenceInfluencerManagerPage,
   /** email engine account id */
@@ -142,13 +142,14 @@ export const scheduleEmails = (
   outreachStepInsert: SequenceEmailInsert;
   followupEmailInserts: SequenceEmailInsert[];
 } => {
+  console.log(`scheduledEmails.length: ${scheduledEmails.length}`);
   const emailCountPerDay = mapScheduledEmailsToCountPerDay(
-    steps,
+    sequenceSteps,
     scheduledEmails
   );
   const followupEmailInserts: SequenceEmailInsert[] = [];
   let outreachStepInsert: SequenceEmailInsert | null = null;
-  steps
+  sequenceSteps
     .sort((a, b) => a.step_number - b.step_number)
     .forEach(({ wait_time_hours, step_number, id }) => {
       const isOutreachEmail = step_number == 0;
@@ -258,8 +259,8 @@ export const findNextAvailableDateIfMaxEmailsPerDayMet = (
   let maxTries = 0;
 
   while (targetDaysEmailCount >= maxDailyPerStep) {
-    if (maxTries > 100) {
-      throw new Error('Could not find next available date within 100 tries');
+    if (maxTries > 300) {
+      throw new Error('Could not find next available date within 300 tries');
     }
     targetDate = findNextBusinessDayTime(addHours(targetDate, 24), timeZone);
     targetDaysEmailCount = getTargetDaysEmailCount(targetDate);
